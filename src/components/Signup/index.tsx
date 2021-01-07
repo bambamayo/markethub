@@ -2,11 +2,12 @@ import * as React from "react";
 import { FcGoogle } from "react-icons/fc";
 import { handlePasswordToggle } from "../../helpers/helpers";
 
-interface SigninProps {
+interface SignupProps {
   buttonClicked: (value: string) => void;
 }
 
-export default function Signin({ buttonClicked }: SigninProps) {
+export default function Signup({ buttonClicked }: SignupProps) {
+  const [fullname, setFullname] = React.useState<string>("");
   const [email, setEmail] = React.useState<string>("");
   const [password, setPassword] = React.useState<string>("");
 
@@ -29,6 +30,19 @@ export default function Signin({ buttonClicked }: SigninProps) {
       <div className="auth__other">OR</div>
       <form className="auth__form">
         <div className="auth__group">
+          <label htmlFor="fullname" className="auth__label">
+            Fullname
+          </label>
+          <input
+            id="fullname"
+            type="text"
+            className="auth__input"
+            value={fullname}
+            placeholder="your email"
+            onChange={(e) => setFullname(e.target.value)}
+          />
+        </div>
+        <div className="auth__group">
           <label htmlFor="email" className="auth__label">
             Email
           </label>
@@ -42,6 +56,15 @@ export default function Signin({ buttonClicked }: SigninProps) {
           />
         </div>
         <div className="auth__group">
+          <label htmlFor="accountType" className="auth__label">
+            Choose account type
+          </label>
+          <select id="accountType" className="auth__input">
+            <option value="merchant">Merchant</option>
+            <option value="buyer">Buyer</option>
+          </select>
+        </div>
+        <div className="auth__group">
           <label htmlFor="password" className="auth__label">
             Password
           </label>
@@ -50,8 +73,7 @@ export default function Signin({ buttonClicked }: SigninProps) {
             type="password"
             className="auth__input"
             value={password}
-            ref={inputRef}
-            placeholder="your password"
+            placeholder="your email"
             onChange={(e) => setPassword(e.target.value)}
           />
           <input
@@ -66,10 +88,10 @@ export default function Signin({ buttonClicked }: SigninProps) {
         </div>
       </form>
       <button
-        onClick={() => buttonClicked("signup")}
+        onClick={() => buttonClicked("signin")}
         className="auth__changeview"
       >
-        or create your free account
+        or log into your account
       </button>
     </div>
   );

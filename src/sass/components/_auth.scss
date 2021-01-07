@@ -67,6 +67,10 @@
     &--tooglehide {
       margin: 0.5rem 0.3rem 0 0;
     }
+
+    &--showtext {
+      font-size: 1.4rem;
+    }
   }
 
   &__submit {
@@ -85,5 +89,15 @@
     &:hover {
       opacity: 0.7;
     }
+  }
+
+  &__changeview {
+    display: inline-block;
+    margin-top: 1rem;
+    font-family: "Montserrat", sans-serif;
+    cursor: pointer;
+    border: none;
+    border-bottom: 0.1rem solid var(--color-black);
+    background-color: var(--color-white);
   }
 }
