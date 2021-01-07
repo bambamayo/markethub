@@ -1,0 +1,42 @@
+.landing {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.banner {
+  flex-basis: 50%;
+
+  &__inner {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.form {
+  flex-basis: 50%;
+  background-color: var(--color-black);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 2rem;
+
+  &__header__cont {
+    margin-bottom: 1rem;
+  }
+
+  &__header {
+    font-size: 2.5rem;
+    font-family: "Merriweather", serif;
+    text-transform: uppercase;
+    color: var(--color-white);
+  }
+}

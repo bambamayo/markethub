@@ -1,0 +1,89 @@
+.auth {
+  width: 60%;
+  background-color: var(--color-white);
+  padding: 1.5rem;
+
+  &__google {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+
+    &__btn {
+      padding: 1rem 2rem;
+      background-color: var(--color-black);
+      color: var(--color-white);
+      display: flex;
+      align-items: center;
+      border: none;
+      cursor: pointer;
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.4rem;
+      border-radius: 0.4rem;
+      transition: 0.3s ease-in-out opacity;
+
+      & span {
+        margin-left: 0.5rem;
+      }
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__group {
+    &:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__other {
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+  }
+
+  &__label,
+  &__input {
+    display: block;
+  }
+
+  &__label {
+    font-size: 1.8rem;
+  }
+
+  &__input {
+    padding: 1rem 2rem;
+    width: 100%;
+    border: 0.1rem solid var(--color-black);
+    border-radius: 0.4rem;
+    font-family: "Montserrat", sans-serif;
+
+    &::placeholder {
+      font-family: "Montserrat", sans-serif;
+    }
+
+    &--tooglehide {
+      margin: 0.5rem 0.3rem 0 0;
+    }
+  }
+
+  &__submit {
+    width: 100%;
+    display: block;
+    padding: 1rem 2rem;
+    border-radius: 0.4rem;
+    border: none;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out opacity;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
