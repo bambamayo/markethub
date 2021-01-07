@@ -1,7 +1,16 @@
+import * as React from "react";
+
 import landingImg from "../assets/images/shopping-cart-monochrome.svg";
-import SignIn from "../components/Signin";
+import Signin from "../components/Signin";
+import Signup from "../components/Signup";
 
 export default function Landing() {
+  const [authType, setAuthType] = React.useState<string>("signin");
+
+  const handleSetAuthType = (value: string) => {
+    setAuthType(value);
+  };
+
   return (
     <section className="landing">
       <div className="banner">
@@ -15,9 +24,17 @@ export default function Landing() {
       </div>
       <div className="form">
         <div className="form__header__cont">
-          <h2 className="form__header">Log into your account</h2>
+          <h2 className="form__header">
+            {authType === "signin"
+              ? "Log into your account"
+              : "Create a free account"}
+          </h2>
         </div>
-        <SignIn />
+        {authType === "signin" ? (
+          <Signin buttonClicked={handleSetAuthType} />
+        ) : (
+          <Signup buttonClicked={handleSetAuthType} />
+        )}
       </div>
     </section>
   );
